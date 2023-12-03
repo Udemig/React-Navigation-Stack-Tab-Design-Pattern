@@ -1,0 +1,5 @@
+export const HOME="Anasayfa"
+export const PROFILE="Profile"
+export const NOTTIFICATION="Bildirimler"
+export const FAVORITES="Favoriler"
+export const PRODUCTLIST="Ürünler"
