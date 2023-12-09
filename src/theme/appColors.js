@@ -1,5 +1,7 @@
 export const AppColors={
-    PRIMARY:"red",
+    PRIMARY:"blue",
     SECONDARY:"#CCC",
-    BLACK:"#000000"
+    BLACK:"#000000",
+    GRAY:"#CCC",
+    WHITE:"#ffffff"
 }

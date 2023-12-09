@@ -7,13 +7,16 @@ import Favorites from '../screens/favorites';
 import Notiffication from '../screens/nottification';
 import TabIcon from '../components/router/tabIcon';
 import {AppColors} from '../theme/appColors';
+import { Text } from 'react-native';
+import HeaderRight from '../components/router/headerRight';
 
 const Tab = createBottomTabNavigator();
 
-export default function TabNavigatior() {
+export default function TabNavigatior({navigation}) {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
+        headerRight:()=>(<HeaderRight navigation={navigation}/>),
         tabBarIcon: ({focused, color, size}) => (
           <TabIcon
             focused={focused}
