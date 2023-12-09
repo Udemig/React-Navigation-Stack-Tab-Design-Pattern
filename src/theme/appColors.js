@@ -3,5 +3,6 @@ export const AppColors={
     SECONDARY:"#CCC",
     BLACK:"#000000",
     GRAY:"#CCC",
-    WHITE:"#ffffff"
+    WHITE:"#ffffff",
+    BLUE:"#3366ff"
 }

@@ -1,14 +1,9 @@
 //import liraries
-import {Home2} from 'iconsax-react-native';
 import React, {useEffect} from 'react';
 import {
   View,
-  Text,
-  StyleSheet,
   FlatList,
-  ActivityIndicator,
 } from 'react-native';
-import {AppColors} from '../../theme/appColors';
 import {useDispatch, useSelector} from 'react-redux';
 import {getProductList} from '../../store/actions/homeActions';
 import Spinner from '../../components/uı/spinner';
