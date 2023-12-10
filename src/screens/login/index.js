@@ -13,6 +13,7 @@ import {AppColors} from '../../theme/appColors';
 import {loginSchema} from '../../utils/validations';
 import {useDispatch, useSelector} from 'react-redux';
 import {userLogin} from '../../store/actions/authAction';
+import { REGISTER } from '../../utils/routes';
 
 // create a component
 const Login = ({navigation}) => {
@@ -25,7 +26,7 @@ const Login = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Formik
-        initialValues={{username: 'mor_2314', password: '83r5^_'}}
+        initialValues={{username: 'johnd', password: 'm38rmF$'}}
         onSubmit={values => dispatch(userLogin(values))}
         validationSchema={loginSchema}>
         {({handleChange, handleBlur, handleSubmit, values, errors}) => (
@@ -70,6 +71,13 @@ const Login = ({navigation}) => {
               ) : (
                 <Text>Giriş Yap</Text>
               )}
+            </Button>
+            <Button
+              status="primary"
+              onPress={()=>navigation.navigate(REGISTER,{username:values.username,password:values.password})}
+              style={styles.activeButton}
+              appearance="outline">
+              <Text>Kayıt Ol</Text>
             </Button>
           </View>
         )}

@@ -1,4 +1,5 @@
 import { AppColors } from "../../theme/appColors";
+import { windowWidth } from "../../utils/constans";
 
 const { StyleSheet } = require("react-native");
 
@@ -12,22 +13,23 @@ const homeScreenStyles = StyleSheet.create({
   
   const productItemStyles = StyleSheet.create({
     container: {
-      flex: 1,
       backgroundColor: '#fff',
       padding: 5,
       borderWidth: 0.5,
       borderColor: AppColors.GRAY,
-      flexDirection: 'row',
-      marginVertical:5
+      margin:5,
+      width:windowWidth/2-20,
+      borderRadius:5
     },
     title: {
       fontSize: 16,
-      fontWeight: '500',
+      fontWeight: 'bold',
+      marginVertical:15
     },
     description: {
       fontSize: 14,
       fontWeight: '300',
-      marginTop: 5,
+      marginVertical:15,
     },
     infoContainer: {
       flex: 2,

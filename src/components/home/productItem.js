@@ -7,6 +7,8 @@ import {productItemStyles} from '../../styles/home/homeStyles';
 import {useDispatch, useSelector} from 'react-redux';
 import {addToChart} from '../../store/actions/homeActions';
 import {LOGIN} from '../../utils/routes';
+import {windowHeight, windowWidth} from '../../utils/constans';
+import {Star} from 'iconsax-react-native';
 
 // create a component
 const ProductItem = ({item}) => {
@@ -45,8 +47,8 @@ const ProductItem = ({item}) => {
       <View style={productItemStyles.imageContainer}>
         <Image
           style={{
-            width: 90,
-            height: 90,
+            width: windowWidth / 2 - 30,
+            height: windowHeight / 7,
             resizeMode: 'contain',
           }}
           source={{
@@ -56,10 +58,15 @@ const ProductItem = ({item}) => {
       </View>
       <View style={productItemStyles.infoContainer}>
         <Text style={productItemStyles.title}>{item.title}</Text>
-        <Text numberOfLines={3} style={productItemStyles.description}>
+        <Text numberOfLines={4} style={productItemStyles.description}>
           {item.description}
         </Text>
-        <CustomButton title="Sepete Ekle" onPress={addChart} />
+        <Text style={productItemStyles.title}>{item.price + ' TL'}</Text>
+        {/* <CustomButton title="Sepete Ekle" onPress={addChart} /> */}
+        <View style={{flexDirection:"row",alignItems:"center"}}>
+          <Star size="25" color="#ff8a65" variant="Bold" />
+          <Text style={productItemStyles.title}>{item?.rating?.rate}</Text>
+        </View>
       </View>
     </Pressable>
   );

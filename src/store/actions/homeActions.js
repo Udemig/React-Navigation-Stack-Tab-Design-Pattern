@@ -1,40 +1,23 @@
-import {ADD_CART_URL, PRODUCTS_URL} from '../../service/urls';
+import { CATEGORIES_URL} from '../../service/urls';
 import {getRequest, postRequest} from '../../service/verb';
 import {
-  ADD_CHART_PENDING,
-  ADD_CHART_REJECT,
-  FETCH_ADD_CHART,
-  FETCH_PRODUCT_LIST,
-  PRODUCT_PENDING,
-  PRODUCT_REJECT,
+  FETCH_CATEGORIES,
+  CATEGORIES_PENDING,
+  CATEGORIES_REJECT,
 } from '../types/homeTypes';
 
-export const getProductList = params => {
+export const getCategories = params => {
   return async dispatch => {
-    dispatch({type: PRODUCT_PENDING});
+    dispatch({type: CATEGORIES_PENDING});
     try {
-      const response = await getRequest(PRODUCTS_URL, params);
+      const response = await getRequest(CATEGORIES_URL, params);
       dispatch({
-        type: FETCH_PRODUCT_LIST,
+        type: FETCH_CATEGORIES,
         payload: response.data,
       });
     } catch (error) {
-      dispatch({type: PRODUCT_REJECT});
+      dispatch({type: CATEGORIES_REJECT});
     }
   };
 };
 
-export const addToChart = payload => {
-  return async dispatch => {
-    dispatch({type: ADD_CHART_PENDING});
-    try {
-      const response = await postRequest(ADD_CART_URL, payload);
-      dispatch({
-        type: FETCH_ADD_CHART,
-        payload: response.data,
-      });
-    } catch (error) {
-      dispatch({type: ADD_CHART_REJECT});
-    }
-  };
-};
